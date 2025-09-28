@@ -47,19 +47,19 @@ Businesses struggles when they records many transactions it is hard to analyze:
 ### ER Diagram
 ```mermaid
 erDiagram
-    CUSTOMERS ||--o{ TRANSACTIONS : "makes"
-    PRODUCTS ||--o{ TRANSACTIONS : "contains"
-    CUSTOMERS {
+    customers ||--o{ transactions : "makes"
+    products ||--o{ transactions : "contains"
+    customers {
         int customer_id PK
         varchar name
         varchar region
     }
-    PRODUCTS {
+    products {
         int product_id PK
         varchar name
         varchar category
     }
-    TRANSACTIONS {
+    transactions {
         int transaction_id PK
         int customer_id FK
         int product_id FK
